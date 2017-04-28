@@ -1,0 +1,53 @@
+* Resources
+
+[[https://www.youtube.com/watch?v=C4Kc8xzcA68][Python: The Mighty Dictionary]]
+
+
+* Question                                                            :drill:
+Python's hashing mechanism
+** Answer
+- Compute the hash
+- Take n last bits (n starts with 3, for an initial table of 2**3 slots, then increases in size (and starts using more bits for increased size))
+- Store the value in the given bit value
+
+#+BEGIN_SRC python
+  d['ftp'] = 21
+n
+  hash_value = bin(hash('ftp'))[2:] # '11011011010010010111111001'
+  last_3_digits = hash_value[-3:]   # 001
+
+  # 001 is used as the index to store data into the a list:
+#+END_SRC
+
+Using the above code, we get something like:
+
+| idx | hash                         | key   | value |
+|-----+------------------------------+-------+-------|
+| 001 | '11011011010010010111111001' | 'ftp' |    21 |
+
+* Question                                                            :drill:
+Which hashing mechanism does python uses?
+
+** Answer
+Probing
+
+* Question                                                            :drill:
+At what size do the Dicts expand or contract?
+
+** Answer
+Dicts double when 2/3 full. 
+Until 50K, they quadruple in size.
+Post 50K, they double in size.
+
+* Question                                                            :drill:
+Why are insertions in dictionaries prohibited during iteration?
+
+** Answer
+Because insertion might change the dictionary size and therefore the hash function (since n increases and the number of bits increases).
+
+* Question                                                            :drill:
+Since dicts waste space, what alternatives are available for storing data? e.g. we can't have 1000s of dicts in memory.
+
+** Answer
+- Tuple, namedtuple
+- class with __slots__

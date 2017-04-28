@@ -1,0 +1,43 @@
+* Question                                                            :drill:
+  SCHEDULED: <2017-04-25 Tue>
+  :PROPERTIES:
+  :ID:       2264fab4-dff7-410b-ad6b-240995096179
+  :DRILL_LAST_INTERVAL: 3.86
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 3
+  :DRILL_FAILURE_COUNT: 2
+  :DRILL_AVERAGE_QUALITY: 1.333
+  :DRILL_EASE: 2.36
+  :DRILL_LAST_QUALITY: 3
+  :DRILL_LAST_REVIEWED: [2017-04-21 Fri 16:42]
+  :END:
+Give a function set which can be used in double-hashing 
+
+** Answer
+
+probe(k,i) = (hash1(k) + i*hash2(k)) % m
+
+#+BEGIN_SRC c
+  // This works when hash_size is prime
+  int probe(int key, int i, size_t hash_size) {
+    int hash1 = key % hash_size;
+    int hash2 = i * (1 + k % (hash_size - 1));
+    return (hash1 + hash2) % hash_size;
+  }
+
+#+END_SRC
+
+* Question
+Give a hash function which works with integers:
+
+** Answer
+
+#+BEGIN_SRC c
+unsigned int hash(unsigned int x) {
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+    return x;
+}
+#+END_SRC
+
