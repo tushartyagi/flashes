@@ -1,0 +1,55 @@
+# -*- org-drill-maximum-items-per-session: 50; org-drill-spaced-repetition-algorithm: simple8 -*-
+
+* Item                                                                :drill:
+  SCHEDULED: <2017-04-30 Sun>
+  :PROPERTIES:
+  :ID:       9bd4c27e-d87c-4613-b5ee-08e332ffcc1b
+  :DRILL_LAST_INTERVAL: 11.1407
+  :DRILL_REPEATS_SINCE_FAIL: 3
+  :DRILL_TOTAL_REPEATS: 2
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.7
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-04-19 Wed 10:13]
+  :END:
+What is the time complexity of Rabin Karp?
+
+** Answer
+O(|s| + |t|)
+
+
+
+* Item                                                                :drill:
+  SCHEDULED: <2017-04-23 Sun>
+  :PROPERTIES:
+  :ID:       7afb955f-90fc-464e-96ad-27e17332f12f
+  :DRILL_LAST_INTERVAL: 3.86
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 3.0
+  :DRILL_EASE: 2.36
+  :DRILL_LAST_QUALITY: 3
+  :DRILL_LAST_REVIEWED: [2017-04-19 Wed 10:22]
+  :END:
+Think about Rabin Fingerprint function.
+
+** Answer
+
+#+BEGIN_SRC c
+  int fingerprint(char *s, int size, int prev_hash, int base) {
+
+    let first = *s;  // The character to be removed
+    let last = *(s + size); // The character to be added 
+
+    // This helps with getting the most significant digit out
+    let powered = (int)pow(base, size - 1);
+
+    int hash = base(prev_hash - first * powered) + last;
+    return hash;
+
+  }
+#+END_SRC
+
+

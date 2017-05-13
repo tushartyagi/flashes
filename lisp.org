@@ -1,0 +1,195 @@
+* Item                       :drill:
+Generic function in lisp
+
+** Answer
+Creates a structure of the "methods". The methods in classes provide the actual implementation.
+
+#+BEGIN_SRC lisp
+  (defgeneric draw (shape)
+    (:documentation "draw the shape"))
+
+  (defmethod draw ((shape circle))
+    ...)
+
+  (defmethod draw ((shape square))
+    ...)
+#+END_SRC
+
+* Item                       :drill:
+Where do methods belong? Classes or Generic Functions?
+
+** Answer
+Generic functions. A GF decides which of the methods to run based on the arguments.
+
+* Item                       :drill:
+What happens when more than one method can be called using the given arguments?
+
+** Answer
+These are combined to a single method and then executed.
+
+* Item                       :drill:
+What is parameter specialisation?
+
+** Answer
+Parameters of a method can be specialised by:
+   - By giving a classname 
+   - EQL specialiser, by providing a particular object
+
+
+* Item                       :drill:
+What is standard method combination?
+
+** Answer
+The most specific method runs first, and then calls `call-next-method` which calls the next specific method, and this goes on until there are either no calls to `call-next-method` or we have reached the top of the heirarchy.
+
+* Item                       :drill:
+What are auxillary methods?
+
+** Answer
+   - These are defined like the "primary" methods syntactically, with `:before`, `:after`, or `:around`. These run as the names suggest.
+   - All the auxillary methods are run, not just the most specific ones.
+   - These are independent pieces helping with DRY
+   - No need to call `call-next-method`
+   
+
+* Item                       :drill:
+What is the order of execution of auxillary methods?
+
+** Answer
+   - :before: most-specific-first order
+     + Most specific runs so that less specific and primary can use the more specific functionalities.
+   - :after: most-specific-last order
+     + Each more specific :after so that each more specific will get a chance to clean up.
+
+* Item                       :drill:
+Can we subclass the inbuilt classes (INTERGER, STRING, LIST, etc)?
+
+** Answer
+Nope. But these can be extended by creating a method which specialised over these.
+
+
+* Item                       :drill:
+How does classes of Common Lisp differ from mainstream OO languages like C#, Java?
+
+** Answer
+The classes in CL only contain the state, with the behavior defined by generic functions and methods. In C#/Java, the class contain both the state and the behavior.
+
+* Item                       :drill:
+Class' namespace.
+
+** Answer
+Classes have a different namespace than functions and variable and therefore a class, a function, and a varible can have a same name.
+
+* Item                       :drill:
+Simula's OOP
+
+** Answer
+A class contains the behaviour, and defines methods or member functions.
+
+* Item                       :drill:
+Skeleton of a class definition
+
+** Answer
+The slots of a class is either a number of names, which can itself be a list of different arguments. `initarg` specifies the name of the argument, `initform` defins the initial value for the slot. The latter takes an expression and therefore can contain some lisp code to create dynamic values.
+
+#+BEGIN_SRC lisp
+
+  (defclass bank-account ()
+    ((customer-name
+      :initarg :name
+      :initform (error "Please specify a name"))
+     (balance
+      :initarg :balance
+      :initform 0)))
+
+  ;; without :name, it will throw the error since initform
+  ;; is evaluated once for every object (and for each slot)
+  ;; which has it defined.
+
+  (make-instance 'bank-account :name "MyName" :balance 120)
+
+#+END_SRC
+
+* Item                       :drill:
+Do `initform` has access to the object being initialised?
+
+** Answer
+Nope. For this, create a method for `initialize-instance` `after` method, specialised for the given class. It will have access to the object, and will run once the object is created.
+
+* Item                       :drill:
+How to create setf-able slots in classes? 
+
+** Answer
+Using setf functions (which defines a way to extend `setf`).
+
+#+BEGIN_SRC lisp
+
+  (defun (setf customer-name) (name account)
+    (setf (slot-value account 'customer-name) name))
+
+#+END_SRC
+
+* Item                       :drill:
+What is `:reader` in a `defclass`?
+
+** Answer
+Used to create a reader/accessor for the class
+
+#+BEGIN_SRC lisp
+  (defclass account ()
+    (balance
+     :initarg :balance
+     :initform 0
+     :reader balance))
+#+END_SRC
+
+
+* Item                       :drill:
+What is `:writer` in a `defclass`?
+
+** Answer
+Used to create a writer/accessor for the class
+
+#+BEGIN_SRC lisp
+  (defclass account ()
+    (customer-name
+     :initarg :customer-name
+     :initform (error "Customer name cannot be empty")
+     :reader customer-name
+     :writer customer-name))
+#+END_SRC
+
+
+* Item                       :drill:
+What is `:accessor` in a `defclass`?
+
+** Answer
+Used to create a reader + writer for the class
+
+#+BEGIN_SRC lisp
+  (defclass account ()
+    (customer-name
+     :initarg :customer-name
+     :initform (error "Customer name cannot be empty")
+     :accessor customer-name))
+#+END_SRC
+
+* Item                       :drill:
+What is `with-slots` and `with-accessors`?
+
+** Answer
+In class, repeatedly calling other slots in a codeblock can become verbose. with-slots allows to access slots, with-accessors allow to access accessors, with the latter being higher level and not using the slots directly.
+
+#+BEGIN_SRC lisp
+  (defmethod assess-low-balance-penalty ((account bank-account))
+    (with-slots (balance) account
+      (when (< balance *minimum-balance*)
+        (decf balance (* balance 0.01)))))
+
+
+  (defmethod assess-low-balance-penalty ((account bank-account))
+    (with-slots ((bal balance)) account
+      (when (< bal *minimum-balance*)
+        (decf bal (* bal 0.01)))))
+#+END_SRC
+

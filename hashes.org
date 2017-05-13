@@ -1,0 +1,28 @@
+* Item                                                                :drill:
+Why need open addressing?
+
+** Answer
+
+
+* Item                                                                :drill:
+What is Bernstein's hash?
+
+** Answer
+
+
+* Item                                                                :drill:
+What is the different algorithms for open addressing?
+
+** Answer
+
+
+* Item                                                                :drill:
+What is linear probing algorithm?
+
+** Answer
+
+
+* Item                                                                :drill:
+What is doubling probing algorithm?
+
+** Answer

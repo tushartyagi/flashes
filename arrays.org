@@ -1,0 +1,7 @@
+* Item                       :drill:
+Row major and Column Major
+
+** Answer
+Row Major: Where column changes most rapidly
+Column Major: Where row changes most rapidly
+

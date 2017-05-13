@@ -1,0 +1,25 @@
+* Item                       :drill:
+  :PROPERTIES:
+  :ID:       52df1e9f-6367-4d57-80bb-770aba24eb58
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-04-25 Tue 09:09]
+  :END:
+
+Who manages the Physical <-> VM memory address conversion
+
+** Answer
+   MMU located in CPU.   
+
+* Item                       :drill:
+
+
+** Answer
+
+
+
