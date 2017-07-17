@@ -1,0 +1,69 @@
+* Item                       :drill:
+What is a vector?
+
+** Answer
+1D array
+
+
+* Item                       :drill:
+How to create vector?
+
+** Answer
+(vector elems*)
+
+
+* Item                       :drill:
+How to create multidimensional arrays?
+
+** Answer
+(make-array dimensions :initial-element element)
+
+* Item                       :drill:
+What is :fill-pointer?
+
+** Answer
+It is used to give the position the next element:
+
+#+BEGIN_SRC lisp
+(make-array 12 :fill-pointer 3)
+#+END_SRC
+
+* Item                       :drill:
+How to make resizable arrays?
+
+** Answer
+By setting the :adjustable parameter to `t`
+
+#+BEGIN_SRC lisp
+
+(make-array 12 :adjustable t)
+
+#+END_SRC
+
+* Item                       :drill:
+How to push elements in a fixed-size/variable-size vector?
+
+** Answer
+#+BEGIN_SRC lisp
+(vector-push element vector)
+(vector-push-extend element vector)
+#+END_SRC
+* Item                       :drill:
+What are specialised vector? Why and how to create one?
+
+** Answer
+Used to contain elements of the same type.
+Better performance when accessing.
+
+#+BEGIN_SRC lisp
+(make-array 12 :element-type 'character)
+#+END_SRC
+
+
+
+
+
+
+
+
+

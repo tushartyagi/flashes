@@ -1,0 +1,98 @@
+* Item                       :drill:
+What are connected components with respect to directed and undirected graphs?
+
+** Answer
+
+* Item                       :drill:
+What are the types of edges possible in undirected graphs' DFS?
+
+** Answer
+  - Tree edges
+  - Back edges
+
+* Item                       :drill:
+What are the types of edges possible in directed graphs' DFS?
+
+** Answer
+  - Tree edges
+  - Back edges
+  - Cross edges
+  - Forward edges
+
+* Item                       :drill:
+What is a tree edge? How to verify it?
+
+** Answer
+The edge connecting a parent to a child in a graph. 
+Can be verified by `x == parent[y]`
+
+* Item                       :drill:
+What is a back edge? How to verify it?
+
+** Answer
+The edge connecting a child to an ancestor in a graph. 
+Can be verified by `x != parent[y] && !processed[x]`. This check means that while the ancestor was still getting processed, the child found a way to it.
+
+* Item                       :drill:
+Explain connectivity for graphs.
+
+** Answer
+When there exists a path between any 2 vertices.
+
+* Item                       :drill:
+Explain connectivity for undirected graphs.
+
+** Answer
+It's called connected components. Where groups of connected vertices get together.
+
+* Item                       :drill:
+Explain connectivity for directed graphs.
+
+** Answer
+It's called strongly connected components. The groups of vertices containing cycles get together. In such cases, the meta-graph behaves as a connected component graph.
+
+* Item                       :drill:
+What is a meta-graph for a directed graph?
+
+** Answer
+This is the graph which groups the connected vertices. This is a DAG since the cycles, if any, go in the individual components.
+
+* Item                       :drill:
+What is a source and a sink in a DAG?
+
+** Answer
+Source is the vertex with the highest `post` number. Sink is the one with the lowest.
+
+* Item                       :drill:
+How to find if the directed graph contains cycles?
+
+** Answer
+TODO
+
+* Item                       :drill:
+What is topological sort? When to use it? How to do it?
+
+** Answer
+TODO
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

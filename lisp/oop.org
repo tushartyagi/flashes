@@ -1,4 +1,15 @@
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       813df295-c599-45b5-a922-7015620b60c8
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 1.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 1
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:09]
+  :END:
 Generic function in lisp
 
 ** Answer
@@ -16,33 +27,56 @@ Creates a structure of the "methods". The methods in classes provide the actual 
 #+END_SRC
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       9471bf0f-a781-4454-be0c-f9f2f418e890
+  :END:
 Where do methods belong? Classes or Generic Functions?
 
 ** Answer
 Generic functions. A GF decides which of the methods to run based on the arguments.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       d9bd36ec-a1c3-414e-a8e4-1321131bf6a8
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:07]
+  :END:
 What happens when more than one method can be called using the given arguments?
 
 ** Answer
 These are combined to a single method and then executed.
 
-* Item                       :drill:
-What is parameter specialisation?
+* Item                                                                :drill:
+  :PROPERTIES:
+  :ID:       72522619-1211-4266-83fa-758bd4213793
+  :END:
+How to achieve parameter specialisation?
 
 ** Answer
 Parameters of a method can be specialised by:
    - By giving a classname 
    - EQL specialiser, by providing a particular object
-
+     
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       7ba5aa82-f1ae-4b1c-9029-cb88781b5fb8
+  :END:
 What is standard method combination?
 
 ** Answer
 The most specific method runs first, and then calls `call-next-method` which calls the next specific method, and this goes on until there are either no calls to `call-next-method` or we have reached the top of the heirarchy.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       5422281c-2959-4862-9583-c41e142fb62d
+  :END:
 What are auxillary methods?
 
 ** Answer
@@ -53,6 +87,17 @@ What are auxillary methods?
    
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       f26a2bdb-a7a9-45e7-abae-26886b753819
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 2.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 2
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:07]
+  :END:
 What is the order of execution of auxillary methods?
 
 ** Answer
@@ -62,6 +107,9 @@ What is the order of execution of auxillary methods?
      + Each more specific :after so that each more specific will get a chance to clean up.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       31bb268a-2705-44a9-be7a-fe9750204aba
+  :END:
 Can we subclass the inbuilt classes (INTERGER, STRING, LIST, etc)?
 
 ** Answer
@@ -69,24 +117,52 @@ Nope. But these can be extended by creating a method which specialised over thes
 
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       303f6ff9-3cfd-4414-bc74-5cb942b3e01f
+  :END:
 How does classes of Common Lisp differ from mainstream OO languages like C#, Java?
 
 ** Answer
 The classes in CL only contain the state, with the behavior defined by generic functions and methods. In C#/Java, the class contain both the state and the behavior.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       1880c62e-6b8a-4237-9a02-9ae41985550e
+  :END:
 Class' namespace.
 
 ** Answer
 Classes have a different namespace than functions and variable and therefore a class, a function, and a varible can have a same name.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       bfc6d94a-fec0-4aaf-b6f2-a65d53adcbba
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 1.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 1
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:10]
+  :END:
 Simula's OOP
 
 ** Answer
 A class contains the behaviour, and defines methods or member functions.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       aa565b92-eb01-4453-9f0b-efe890012d74
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 1.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 1
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:09]
+  :END:
 Skeleton of a class definition
 
 ** Answer
@@ -111,12 +187,34 @@ The slots of a class is either a number of names, which can itself be a list of 
 #+END_SRC
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       c97d9943-e127-4b5c-bade-4b7caa33045f
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:09]
+  :END:
 Do `initform` has access to the object being initialised?
 
 ** Answer
 Nope. For this, create a method for `initialize-instance` `after` method, specialised for the given class. It will have access to the object, and will run once the object is created.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       99937dc0-3c9d-4df8-b9ae-f2175b9b6190
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:04]
+  :END:
 How to create setf-able slots in classes? 
 
 ** Answer
@@ -130,6 +228,17 @@ Using setf functions (which defines a way to extend `setf`).
 #+END_SRC
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       73072468-0874-4a1b-b6f3-e9b5c5429542
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 2.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 2
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:06]
+  :END:
 What is `:reader` in a `defclass`?
 
 ** Answer
@@ -145,6 +254,17 @@ Used to create a reader/accessor for the class
 
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       59782976-0221-43a1-951d-d0742fbc969f
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:09]
+  :END:
 What is `:writer` in a `defclass`?
 
 ** Answer
@@ -161,6 +281,9 @@ Used to create a writer/accessor for the class
 
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       bda89b96-a424-4ca8-a866-a8ba50bf668d
+  :END:
 What is `:accessor` in a `defclass`?
 
 ** Answer
@@ -175,6 +298,17 @@ Used to create a reader + writer for the class
 #+END_SRC
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       80b812bf-114b-444b-b9df-f933e127e934
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 2.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 2
+  :DRILL_LAST_REVIEWED: [2017-05-14 Sun 11:08]
+  :END:
 What is `with-slots` and `with-accessors`?
 
 ** Answer

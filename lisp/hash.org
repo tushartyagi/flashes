@@ -1,0 +1,50 @@
+* Item                       :drill:
+How to create hash-table?
+
+** Answer
+#+BEGIN_SRC lisp
+  (defvar h (make-hash-table))
+#+END_SRC
+
+* Item                                                                :drill:
+How to get/set values in the hash-table?
+
+** Answer
+#+BEGIN_SRC lisp
+  (gethash key hash-table)
+  (setf (gethash key hash-table) new-value)
+#+END_SRC
+
+* Item                       :drill:
+What are the return values of `get-hash`
+
+** Answer
+It returns 2 values: the value of the key; if the value was found (t) otherwise nil. THis is useful in case the table contains `nil` as values.
+
+* Item                       :drill:
+What is the default equality test of hash-table?
+
+** Answer
+`eql`: test memory locations and numbers/chars.
+
+* Item                       :drill:
+How to change the default test of hash-table?
+
+** Answer
+The default hash-table signature is:
+
+`(make-hash-table &key :test :size :rehash-size :rehash-threshold)`
+
+#+BEGIN_SRC lisp
+  (make-hash-table :test #'equal)
+#+END_SRC
+
+
+
+
+
+
+
+
+
+
