@@ -1,0 +1,2 @@
+# flashes
+Flash cards on various subjects. To be used with [[http://orgmode.org/worg/org-contrib/org-drill.html][org-drill]].
