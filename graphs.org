@@ -1,9 +1,32 @@
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       0afa5b4e-99a8-4589-a839-d664ad6b1a91
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:42]
+  :END:
 What are connected components with respect to directed and undirected graphs?
 
 ** Answer
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       13ff8d86-6db6-40b5-8ff0-8c5f048ccb2d
+  :DRILL_LAST_INTERVAL: 4.14
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.6
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:41]
+  :END:
 What are the types of edges possible in undirected graphs' DFS?
 
 ** Answer
@@ -11,6 +34,18 @@ What are the types of edges possible in undirected graphs' DFS?
   - Back edges
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       f8d52b7d-03f0-4ef9-a3e2-b1fa8cdd20c9
+  :DRILL_LAST_INTERVAL: 4.14
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.6
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:39]
+  :END:
 What are the types of edges possible in directed graphs' DFS?
 
 ** Answer
@@ -20,6 +55,18 @@ What are the types of edges possible in directed graphs' DFS?
   - Forward edges
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       a28073bf-77a5-45ea-836a-9db4ef476b16
+  :DRILL_LAST_INTERVAL: 4.14
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.6
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:40]
+  :END:
 What is a tree edge? How to verify it?
 
 ** Answer
@@ -27,6 +74,17 @@ The edge connecting a parent to a child in a graph.
 Can be verified by `x == parent[y]`
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       42c24b0d-f92c-4405-b9d5-5f105a6fb789
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 2
+  :DRILL_FAILURE_COUNT: 2
+  :DRILL_AVERAGE_QUALITY: 1.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:44]
+  :END:
 What is a back edge? How to verify it?
 
 ** Answer
@@ -34,65 +92,142 @@ The edge connecting a child to an ancestor in a graph.
 Can be verified by `x != parent[y] && !processed[x]`. This check means that while the ancestor was still getting processed, the child found a way to it.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       35a84c68-f365-4d07-ba57-78966df106bd
+  :END:
 Explain connectivity for graphs.
 
 ** Answer
 When there exists a path between any 2 vertices.
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       bea27c8a-616b-4bf5-9e58-f0ed326f7b81
+  :DRILL_LAST_INTERVAL: 4.14
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.6
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:40]
+  :END:
 Explain connectivity for undirected graphs.
 
 ** Answer
 It's called connected components. Where groups of connected vertices get together.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       291c4e08-a42d-4d3b-9aed-c50651153d56
+  :END:
 Explain connectivity for directed graphs.
 
 ** Answer
-It's called strongly connected components. The groups of vertices containing cycles get together. In such cases, the meta-graph behaves as a connected component graph.
+Connectivity for any two vertices `x` and `y` in a directed graphs means that there's a path from both `x` to `y` and from `y` to `x`.
+It's called strongly connected components. 
+The groups of vertices containing cycles get together. 
+In such cases, the meta-graph behaves as a connected component graph.
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       79c1f4cc-978d-40d9-8ac7-da35caefa6a1
+  :DRILL_LAST_INTERVAL: 4.0
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 4.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 4
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:39]
+  :END:
 What is a meta-graph for a directed graph?
 
 ** Answer
 This is the graph which groups the connected vertices. This is a DAG since the cycles, if any, go in the individual components.
 
 * Item                       :drill:
+  SCHEDULED: <2017-07-22 Sat>
+  :PROPERTIES:
+  :ID:       9356416d-086f-4a17-9543-3a3b25db32d2
+  :DRILL_LAST_INTERVAL: 4.14
+  :DRILL_REPEATS_SINCE_FAIL: 2
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 0
+  :DRILL_AVERAGE_QUALITY: 5.0
+  :DRILL_EASE: 2.6
+  :DRILL_LAST_QUALITY: 5
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:39]
+  :END:
 What is a source and a sink in a DAG?
 
 ** Answer
+Source is the vertex which has no incoming edges, sink has no outgoing edges.
 Source is the vertex with the highest `post` number. Sink is the one with the lowest.
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       c79a86d4-a3d3-4d16-957b-d62891549d3a
+  :END:
 How to find if the directed graph contains cycles?
 
 ** Answer
 TODO
 
 * Item                       :drill:
+  :PROPERTIES:
+  :ID:       d0a7ba11-39e6-4301-a62b-f18e418614ea
+  :DRILL_LAST_INTERVAL: 0.0
+  :DRILL_REPEATS_SINCE_FAIL: 1
+  :DRILL_TOTAL_REPEATS: 1
+  :DRILL_FAILURE_COUNT: 1
+  :DRILL_AVERAGE_QUALITY: 0.0
+  :DRILL_EASE: 2.5
+  :DRILL_LAST_QUALITY: 0
+  :DRILL_LAST_REVIEWED: [2017-07-18 Tue 09:42]
+  :END:
 What is topological sort? When to use it? How to do it?
 
 ** Answer
-TODO
+Topological sort means arranging the nodes of a DAG in decreasing
+order of their post times.  Since the node with the highest post time
+is the source, this arrangement maintains a linear arrangement from
+highest to the lowest.  The use is to linearise the graph so that any
+for any two nodes `x` and `y`, if `x` has a dependency on `y`, the
+former comes before the latter during traversing.
+
+* Item                                                                :drill:
+What is the difference between BFS and Dijkstra's algorithms? The use cases?
+
+** Answer 
+While both create the shortest path from the starting node, BFS
+assumes that the weights between the nodes are equal (i.e. 1), whereas
+Dijkstra's shortest path algo allows different weights as long as
+these are positive.
+
+* Item                                                                :drill:
+What algorithm to use for shortest path if the graph allows negative weights?
+
+** Answer 
+Bellman Ford. Though the graph should not contain negative cycles.
 
 
+* Item                                                                :drill:
+How to check if the graph contains negative cycles using Bellman-Ford?
 
+** Answer 
+Bellman Ford's logic iterates |V| - 1 times. By the time this is over,
+all the paths are relaxed.  If running the iteration |V| times changes
+the paths one more time, then it means there's a negative cycle.
 
+* Item                                                                :drill:
+What is a minimum spanning tree?
 
+** Answer 
+For an unweighted graph, the MST is what we get by running a DFS/BFS
+on the graph.
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+For a weighted graph, a MST creates a tree where the
+edge weights is the minimum of all the configurations.
