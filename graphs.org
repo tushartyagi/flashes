@@ -1,4 +1,4 @@
-* Item                       :drill:
+* Item                                                                :drill:
   :PROPERTIES:
   :ID:       0afa5b4e-99a8-4589-a839-d664ad6b1a91
   :DRILL_LAST_INTERVAL: 0.0
@@ -213,7 +213,6 @@ What algorithm to use for shortest path if the graph allows negative weights?
 ** Answer 
 Bellman Ford. Though the graph should not contain negative cycles.
 
-
 * Item                                                                :drill:
 How to check if the graph contains negative cycles using Bellman-Ford?
 
@@ -231,3 +230,54 @@ on the graph.
 
 For a weighted graph, a MST creates a tree where the
 edge weights is the minimum of all the configurations.
+* Item                                                                :drill:
+Explain Dijkstra's algorithm.
+
+** Answer
+Meta: This is for finding a single source shortest path.
+
+Use a minimum priority queue (Q) to hold the node distances; starting
+node has distance value as `0` and others have `Infinity`.  
+
+Remove the node with minimum weight from Q and calculate the distances
+of its neighbours, updating the distances and previous-node in Q.
+
+Repeat until there are no more vertices in Q.
+* Item                                                                :drill:
+Explain Kruskal's algorithm.
+
+** Answer
+Meta: This is for finding a minimum spanning tree.
+Meta: Uses the concepts of connected components or set partitions.
+Meta: Best DS is one which makes union-find fast.
+
+- Setup: Make each vertex as a separate connected component.
+- Setup: Make a minimum priority queue (Q) with edge weights.
+
+- Start with an empty graph X
+- Keep picking edges from Q:
+  + Check if the nodes from the edge belong to different components using `find` operation:
+    * Merge the components using `union` operation
+    * Move the edge in X
+
+* Item                                                                :drill:
+Explain Prim's algorithm.
+
+** Answer
+Meta: This is for finding a mininum spanning tree.
+Meta: Works on the concepts of tree and non-tree nodes.
+
+- Setup: Make a minimum priority queue (Q) with edge weights.
+- Setup: Pick a random node as a `tree-node`
+
+- Start with an empty graph X
+- While there are still non-tree nodes:
+  + Pick the minimum edge from Q.
+  + If the edge contains a tree and a non-tree node:
+    * Add the edge to X
+
+* Item                                                                :drill:
+What is union-find? When to use it?
+
+** Answer
+TODO
